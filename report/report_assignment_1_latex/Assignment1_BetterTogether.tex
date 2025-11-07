@@ -1,0 +1,286 @@
+\documentclass{article}
+
+% Language and encoding
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+% Page size and margins
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Packages for math, figures, links
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Computational Astrophysics 2025/2026}}\\[0.2cm]
+{\large Physics of Data}\\[0.2cm]
+\textbf{Part 1: Transit Light Curves}\\[0.1cm]
+Submission deadline: 07/11/2025
+\\[1.5cm]
+
+{\LARGE \textbf{Assignment 1: Better Together!}}\\[0.4cm]
+
+\textit{“But we are strong, each in our purpose, and we are all more strong together.”}\\
+\textit{— Bram Stoker}
+\\[1.8cm]
+
+\textbf{Group Members:}\\[0.15cm]
+Bianca Ponnekanti\\
+Aditya Swamy\\
+Lewis Ballard\\
+Mahdis Rezaei Niasar
+\\[1.2cm]
+
+Department of Physics and Astronomy, University of Padova\\
+Instructor: Prof. Tiziano
+\\[1.5cm]
+
+\includegraphics[width=4cm]{unipd_logo.png}
+
+\end{center}
+
+\vspace{1.5cm}
+
+\begin{abstract}
+This report presents the work completed for Assignment 1: \textit{Better Together!}. 
+For each task, the actions carried out are described together with the relevant Git commit hashes and dates.
+\end{abstract}
+
+
+
+\newpage
+\subsection*{Task A : Let's start}
+The name of the repository for this assignment is \texttt{comp\_astro\_25}.\\
+It is available at:\url{https://github.com/bponnekanti/comp_astro_25.git}.
+
+\vspace{0.6cm}
+
+\subsection*{Task B: Don’t forget your parents}
+The original repository was added as remote \texttt{ca25repo}. \\
+The latest information on the last remote commit was saved in
+\texttt{assignment1\_taskB.txt} to document the remote state.\\
+
+\vspace{0.35cm}
+
+\textbf{Document remote repository state}\\
+
+\textbf{Commit:} 606c80c6a9aaeded400ba565d642e6d406cfacd9 \\
+
+\textbf{Date:} Sun Oct 26 10:38:51 2025 \\
+
+\vspace{0.6cm}
+
+\subsection*{Task C : Branch creation}
+Each group member created a file with their name under the new branch \texttt{assignment1\_taskC} to document individual contributions. These files were committed and pushed separately.\\
+
+\vspace{0.35cm}
+
+\textbf{Record of individual contributions}\\
+
+\textbf{Username:} mahdisrenia-coder\\
+
+\textbf{Commit (Mahdis):} 8c173a6b1eba6e3f1913be0f9e6dfdc52b0531cb \\
+
+\textbf{Date:} Sun Oct 26 11:43:49 2025 \\
+
+\vspace{0.5cm}
+
+\textbf{Username:} lcballard\\
+
+\textbf{Commit (Lewis):} 6161122a86f65114ae7a1f31e1c5abd2b36ce948 \\
+
+\textbf{Date:} Sun Oct 26 13:30:31 2025 \\
+
+\vspace{0.5cm}
+
+\textbf{Username:} adityaswamy-Astro\\
+
+\textbf{Commit (Aditya):} 1ac53c82f632e183278219549f4a093fce8b0381 \\
+
+\textbf{Date:}  Tue Oct 28 12:11:59 2025 \\
+
+\vspace{0.5cm}
+
+\textbf{Username:} bponnekanti\\
+
+\textbf{Commit (Bianca):} c7720796a081293b7429ee11169998899944d2b1 \\
+
+\textbf{Date:}  Fri Nov 7 11:56:00 2025 \\
+
+\vspace{0.6cm}
+
+\subsection*{Task D : Let's merge}
+The main and assignment1\_taskC branches were merged to integrate all individual contributions.\\
+The merge was performed using the command \texttt{git merge assignment1\_taskC}.\\
+
+\textbf{Commit:} dd7d8e1006e4ac6186bc7e5337e560b5c348c2f9 \\
+
+\textbf{Date:} Fri Nov 7 13:10:25 2025 \\
+
+\vspace{0.6cm}
+
+\subsection*{Task E : Ready to go!}
+A Conda environment \texttt{assignment1\_taskE} was created, including \texttt{batman-package}, \texttt{NumPy}, and \texttt{Python}. The installed packages were saved in \texttt{assignment1\_taskE.txt}.\\
+
+\textbf{Commit:} 56e4c9a136a78177b92298d108e6d75f0c219bdc \\
+
+\textbf{Date:} Sun Nov 2 18:02:09 2025 \\
+
+\vspace{0.6cm}
+
+\subsection*{Task F: Planet sweet Planet!}
+
+In the Python script, the \texttt{batman} package is used with the planetary parameters of HATS-12 b and its limb-darkening coefficients (from a CSV file) to model the transit and generate the corresponding light curve. The PNG file illustrates the change in the star’s relative brightness (relative flux) during the planet’s transit.\\
+
+\textbf{Commit:} 215a01276da016c8ca2d14c50daabbc2b5558436 \\
+
+\textbf{Date:} Mon Nov 3 13:25:54 2025 \\
+
+\vspace{0.5cm}
+
+\noindent The planetary parameters used in the transit model are summarized in Table~\ref{tab:params}:
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+Parameter & Value \\
+\hline
+Mid-transit time ($t_0$) & 0.0 d \\
+Orbital period ($P$) & 3.142702 d \\
+Planet radius ($R_p/R_\star$) & 0.06951 \\
+Semi-major axis ($a/R_\star$) & 9.48 \\
+Inclination ($i$) & 85.27$^\circ$ \\
+Eccentricity ($e$) & 0.085 \\
+Longitude of periastron ($\omega$) & 0.0$^\circ$ \\
+Limb-darkening model & quadratic \\
+Coefficients ($u_1, u_2$) & 0.227, 0.248 \\
+\hline
+\end{tabular}
+\captionof{table}{Planetary parameters for HATS-12 b}
+\label{tab:params}
+\end{center}
+
+\vspace{0.5cm}
+
+\noindent The limb-darkening coefficients sample, extracted from stellar atmosphere data, are given in Table~\ref{tab:limb}:
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{tabular}{cccc}
+\hline
+Eff & Logg & $u_1$ & $u_2$ \\
+\hline
+6250 & 4.5 & 0.569 & 0.199 \\
+6250 & 4.5 & 0.561 & 0.213 \\
+6250 & 4.5 & 0.520 & 0.237 \\
+6250 & 4.5 & 0.481 & 0.259 \\
+6250 & 4.5 & 0.454 & 0.262 \\
+... & ... & ... & ... \\
+6250 & 4.5 & 0.216 & 0.245 \\
+\hline
+\end{tabular}
+\captionof{table}{sample of u1 and u2 extracted from limb darkening coefficinets}
+\label{tab:limb}
+\end{center}
+
+\vspace{0.5cm}
+
+\noindent The resulting light curve is shown in Figure~\ref{fig:lightcurve}:
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{HATS-12b_assignment1_taskF.png}
+\captionof{figure}{Simulated transit light curve of HATS-12 b} 
+\label{fig:lightcurve}
+\end{center}
+
+\vspace{0.6cm}
+
+\subsection*{Task G: Where is my transit?}
+
+In \texttt{transit.py}, the \texttt{daneel.transit} method was defined to generate a transit light curve from a YAML input file containing planetary parameters.  
+The main script (\_\_main\_\_.py) was updated to allow command-line execution, so the transit function could be called with the flag \texttt{-t} and a path to the parameter file.  
+
+For this task, the transit of the planet WASP-121 b was simulated.  
+The planetary parameters stored in the YAML file are summarized in Table~\ref{tab:paramsG}:
+
+\vspace{1.0cm}
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+Parameter & Value \\
+\hline
+Mid-transit time ($t_0$) & 0.0 d \\
+Orbital period ($P$) & 1.580404 d \\
+Planet radius ($R_p/R_\star$) & 0.187 \\
+Semi-major axis ($a/R_\star$) & 5.47 \\
+Inclination ($i$) & 87.5$^\circ$ \\
+Eccentricity ($e$) & 0.0 \\
+Longitude of periastron ($\omega$) & 90$^\circ$ \\
+Limb-darkening model & quadratic \\
+Coefficients ($u_1, u_2$) & 0.27, 0.02 \\
+\hline
+\end{tabular}
+\captionof{table}{Planetary parameters for WASP-121 b}
+\label{tab:paramsG}
+\end{center}
+
+\vspace{0.5cm}
+
+\noindent The transit light curve generated using the command:
+
+\begin{verbatim}
+daneel -i path_to_parameters.yaml -t
+\end{verbatim}
+
+\noindent is shown in Figure~\ref{fig:transitG}:
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{WASP-121b.png}
+\captionof{figure}{Transit light curve of WASP-121 b generated via the command-line method}
+\label{fig:transitG}
+\end{center}
+
+\vspace{0.5cm}
+
+\textbf{Commit (added transit.py file):} 7b6365c5a88e81af4bdb31f607fce665089ee413 \\
+
+\textbf{Commit (updated READ.ME):} 72f695cf7f13a9b34dba3ccb829a478feda4105d \\
+
+\textbf{Commit (created YAML file):} 1e4deb846160f71ad82070fe5fca7310840c9053 \\
+
+\textbf{Date:} Thu Nov 6 -- Fri Nov 7, 2025\\
+
+\newpage
+
+\subsection*{Task H: The Untouchable}
+
+The \texttt{run\_daneel} folder was created outside the repository and contained the YAML parameter file for planet WASP-121 b( same planet as task G ). The command ran successfully, generating the transit light curve, and the folder was then pushed to the repository.\\
+
+\textbf{Commit:} c0cca1cc0fc1b265bf7361adc321a6a705a38e15 \\
+
+\textbf{Date:} Fri Nov 7 10:09:54 2025\\
+
+\subsection*{Task I: Universe is a weird place}
+
+We proposed an acronym for our forked repository \texttt{comp\_astro\_25}. 
+We chose \textbf{PEPPAPIG} as our acronym. This stands for \textbf{P}ondering \textbf{E}xo\textbf{P}lanetary \textbf{P}arameters \textbf{A}nd \textbf{P}lotting \textbf{I}ma\textbf{G}es of their transits. In creating this acronym, we paid tribute to many astronomical acronyms which both use multiple letters from the same word to aid the acronym, and leave words out entirely (i.e. \textbf{PLA}netary \textbf{T}ransits and \textbf{O}scillations of stars) for the upcoming PLATO mission. It was important to us that the average user is completely unable to guess what the acronym stands for, and that the long title is much less important than the acronym itself. When likened to the age-old philosophical question of the chicken and the egg, we wanted to make sure there would be no similarly elusive answer about whether our title or our acronym came first. 
+
+Peppa Pig is a reference to the eponymous animated children's TV show, which began airing in 2004 and is still running today. As Figure \ref{fig:peppa pig} shows, Peppa is a young piglet whose adventures and learning met with vast global success over the course of the show's nine seasons. The show is produced by Hasbro Entertainment. We acknowledge that we do not own the rights to this character, and if the code on this repository were ever to be published, we would change the name to avoid litigation. Currently, our usage of her name and likeness falls under fair-use rights for non-profit educational purposes.
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Peppa_Pig.png}
+\captionof{figure}{Peppa pig } 
+\label{fig:peppa pig}
+\end{center}
+
+%written by mahdis 
+\end{document}
