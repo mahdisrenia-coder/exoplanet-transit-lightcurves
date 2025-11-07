@@ -71,3 +71,7 @@ This project is licensed under the MIT License.
 ## Author
 
 Tiziano Zingales (tiziano.zingales@unipd.it)
+
+## assignmet: 
+
+This version of the project includes my personal contributions for Assignment 1: transit light curve modeling, for the course *Computational Astrophysics 2025/2026* at the University of Padova.
