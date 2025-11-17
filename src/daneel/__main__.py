@@ -7,7 +7,7 @@ import datetime
 import argparse
 from daneel.parameters import Parameters
 from daneel.detection import *
-from daneel import transit
+from daneel.detection import transit
 
 ##mahdis' note: 
 # datetime lets us track when the program starts and ends.
